@@ -5,7 +5,8 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "com.udacity.gradle.builditbigger"
+        applicationId "com.ijzepeda.builditbigger"
+//        applicationId "com.udacity.gradle.builditbigger"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -19,10 +20,12 @@ android {
     }
     productFlavors {
         free {
-            applicationId "com.udacity.gradle.builditbigger.free"
+            applicationId "com.ijzepeda.builditbigger.free"
+//            applicationId "com.udacity.gradle.builditbigger.free"
         }
         paid {
-            applicationId "com.udacity.gradle.builditbigger.paid"
+            applicationId "com.ijzepeda.builditbigger.paid"
+//            applicationId "com.udacity.gradle.builditbigger.paid"
         }
     }
 }
@@ -34,4 +37,5 @@ dependencies {
     compile 'com.google.android.gms:play-services:9.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
     compile project(":androidlibrary")
+    compile project(":javalibrary")
 }

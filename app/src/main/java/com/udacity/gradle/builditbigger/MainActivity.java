@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ijzepeda.androidlibrary.FetchJoke;
+import com.ijzepeda.JavaLibJokes;
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -41,10 +42,15 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
+        //complaining
 //        Toast.makeText(this, "derp " + getResources().getString(R.string.version),
 //                Toast.LENGTH_SHORT).show();
-
+        //retrieve the joke from javalibrary
+//        Toast.makeText(this,new JavaLibJokes().getJoke() ,
+//                Toast.LENGTH_SHORT).show();
 Intent intent=new Intent(this,FetchJoke.class);
+        //send the retrieve joke to android library
+//        intent.putExtra("joke",new JavaLibJokes().getJoke());
         startActivity(intent);
 
     }
