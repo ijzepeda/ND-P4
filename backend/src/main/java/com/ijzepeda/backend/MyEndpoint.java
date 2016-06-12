@@ -33,7 +33,7 @@ public class MyEndpoint {
     @ApiMethod(name = "tellJoke")
     public MyBean tellJoke(@Named("name") String passedJoke) {
         MyBean response = new MyBean();
-        response.setData("[on GCM Endpoint.tellJoke]"+passedJoke);
+        response.setData(passedJoke);
 
         return response;
     }
@@ -43,7 +43,7 @@ public class MyEndpoint {
     @ApiMethod(name = "retrieveJoke")
     public MyBean retrieveJoke() {
         MyBean response = new MyBean();
-        response.setData("[on GCM Endpoint.retrievesJoke]"+new JavaLibJokes().getJoke());
+        response.setData(new JavaLibJokes().getJoke());
 
         return response;
     }

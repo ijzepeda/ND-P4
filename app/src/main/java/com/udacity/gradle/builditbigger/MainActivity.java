@@ -41,19 +41,20 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void tellJoke(View view){
-        //complaining
-//        Toast.makeText(this, "derp " + getResources().getString(R.string.version),
-//                Toast.LENGTH_SHORT).show();
-        //retrieve the joke from javalibrary
-//        Toast.makeText(this,new JavaLibJokes().getJoke() ,
-//                Toast.LENGTH_SHORT).show();
-Intent intent=new Intent(this,FetchJoke.class);
-        //send the retrieve joke to android library
-//        intent.putExtra("joke",new JavaLibJokes().getJoke());
-        startActivity(intent);
 
-    }
+//   public void tellJoke(View view){
+// //complaining
+// //        Toast.makeText(this, "derp " + getResources().getString(R.string.version),
+// //                Toast.LENGTH_SHORT).show();
+// //retrieve the joke from javalibrary
+// //        Toast.makeText(this,new JavaLibJokes().getJoke() ,
+// //                Toast.LENGTH_SHORT).show();
+// Intent intent=new Intent(this,FetchJoke.class);
+// //send the retrieve joke to android library
+// //        intent.putExtra("joke",new JavaLibJokes().getJoke());
+// startActivity(intent);
+//
+// }
 
 
 }

@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'keystore'
+            keyPassword 'password'
+            storeFile file('C:/Nanodegree/FinalProject/keystore.jks')
+            storePassword 'password'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.ijzepeda.builditbigger"
 //        applicationId "com.udacity.gradle.builditbigger"
@@ -11,6 +18,7 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        signingConfig signingConfigs.config
     }
     buildTypes {
         release {
@@ -22,20 +30,32 @@ android {
         free {
             applicationId "com.ijzepeda.builditbigger.free"
 //            applicationId "com.udacity.gradle.builditbigger.free"
+            signingConfig signingConfigs.config
         }
         paid {
             applicationId "com.ijzepeda.builditbigger.paid"
 //            applicationId "com.udacity.gradle.builditbigger.paid"
+            signingConfig signingConfigs.config
         }
     }
+    lintOptions {
+        abortOnError false
+    }
+//    testOptions { // <-- You need this
+//        unitTests {
+//            returnDefaultValues = true
+//        }
+//    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     // Added for AdMob
+    compile project(':androidlibrary')
+    compile project(':javalibrary')
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.google.android.gms:play-services:9.0.2'
     compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
-    compile project(":androidlibrary")
-    compile project(":javalibrary")
+    compile 'com.android.support:support-v4:23.4.0'
+    testCompile 'junit:junit:4.12'
 }
